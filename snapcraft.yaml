@@ -1,7 +1,7 @@
 name: linex
 summary: linex for line execution
 description: linex for line execution
-version: 0.0.2
+version: 0.0.3
 grade: stable
 base: core20
 
