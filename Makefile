@@ -1,7 +1,7 @@
 snap: push
 	@snapcraft
 
-push: build
+push:
 	@git push
 
 build:
