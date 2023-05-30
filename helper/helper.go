@@ -70,10 +70,8 @@ func SplitString(input string) []string {
 			}
 		case char == '"' && !inQuotes:
 			inQuotes = true
-			currentArg += string(char)
 		case char == '"' && inQuotes:
 			inQuotes = false
-			currentArg += string(char)
 		default:
 			currentArg += string(char)
 		}
