@@ -10,7 +10,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/anandureghu/lnx/helper"
+	"github.com/anandureghu/linex/helper"
 	"github.com/spf13/cobra"
 )
 

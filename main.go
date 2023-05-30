@@ -1,6 +1,6 @@
 package main
 
-import "github.com/anandureghu/lnx/cmd"
+import "github.com/anandureghu/linex/cmd"
 
 func main() {
 	cmd.Execute()

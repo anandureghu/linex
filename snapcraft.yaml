@@ -8,13 +8,13 @@ base: core20
 confinement: devmode
 
 apps:
-  lnx:
-    command: bin/lnx
+  linex:
+    command: bin/linex
     plugs:
       - home
 
 parts:
-  lnx:
+  linex:
     plugin: go
     source-type: git
-    source: https://github.com/anandureghu/lnx
+    source: https://github.com/anandureghu/linex

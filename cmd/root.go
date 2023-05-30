@@ -11,7 +11,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "lnx",
+	Use:   "linex",
 	Short: "Line Execution CLI in golang",
 	Long:  `Line Execution CLI application written in golang`,
 	// Uncomment the following line if your bare application
@@ -33,7 +33,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.lnx.yaml)")
+	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.linex.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.

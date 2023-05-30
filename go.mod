@@ -1,4 +1,4 @@
-module github.com/anandureghu/lnx
+module github.com/anandureghu/linex
 
 go 1.20
 

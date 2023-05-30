@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/anandureghu/lnx/helper"
+	"github.com/anandureghu/linex/helper"
 	"github.com/spf13/cobra"
 )
 
