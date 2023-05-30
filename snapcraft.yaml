@@ -1,0 +1,20 @@
+name: linex
+summary: linex for line execution
+description: linex for line execution
+version: 0.0.1
+grade: stable
+base: core20
+
+confinement: devmode
+
+apps:
+  lnx:
+    command: bin/lnx
+    plugs:
+      - home
+
+parts:
+  lnx:
+    plugin: go
+    source-type: git
+    source: https://github.com/anandureghu/lnx
