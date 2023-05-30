@@ -1,3 +1,4 @@
+title: Linex
 name: linex
 summary: linex for line execution
 description: linex for line execution
@@ -5,7 +6,7 @@ version: 0.0.3
 grade: stable
 base: core20
 
-confinement: devmode
+confinement: strict
 
 apps:
   linex:
@@ -18,3 +19,7 @@ parts:
     plugin: go
     source-type: git
     source: https://github.com/anandureghu/linex
+
+issues: https://github.com/anandureghu/linex/issues/new/choose
+donation: https://paypal.me/anandureghu?country.x=IN&locale.x=en_GB
+
