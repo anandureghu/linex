@@ -8,7 +8,6 @@ import (
 	"log"
 	"os"
 	"os/exec"
-	"strings"
 
 	"github.com/anandureghu/linex/helper"
 	"github.com/spf13/cobra"
@@ -36,7 +35,7 @@ to quickly create a Cobra application.`,
 				if len(commands[args[0]]) > 0 {
 					fmt.Printf("applying '%s'\n", script)
 
-					scriptArgs := strings.Split(script, " ")
+					scriptArgs := helper.SplitString(script)
 					cmd := exec.Command(scriptArgs[0], scriptArgs[1:]...)
 					cmd.Stdout = os.Stdout
 					cmd.Stderr = os.Stderr

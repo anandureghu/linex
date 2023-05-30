@@ -23,7 +23,6 @@ func ReadJSONToken() map[string][]string {
 }
 
 func WriteJSON(data []byte) (bool, error) {
-	fmt.Println(getFilePath())
 	err := os.WriteFile(getFilePath(), data, fs.ModeAppend)
 	if err != nil {
 		return false, err
@@ -55,4 +54,34 @@ func getFilePath() string {
 	}
 
 	return file
+}
+
+func SplitString(input string) []string {
+	var args []string
+	var currentArg string
+	var inQuotes bool
+
+	for _, char := range input {
+		switch {
+		case char == ' ' && !inQuotes:
+			if currentArg != "" {
+				args = append(args, currentArg)
+				currentArg = ""
+			}
+		case char == '"' && !inQuotes:
+			inQuotes = true
+			currentArg += string(char)
+		case char == '"' && inQuotes:
+			inQuotes = false
+			currentArg += string(char)
+		default:
+			currentArg += string(char)
+		}
+	}
+
+	if currentArg != "" {
+		args = append(args, currentArg)
+	}
+
+	return args
 }
