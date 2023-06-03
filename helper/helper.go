@@ -31,6 +31,7 @@ func WriteJSON(data []byte) (bool, error) {
 
 func getFilePath() string {
 	dir := ""
+
 	switch runtime.GOOS {
 	case "linux":
 		dir = fmt.Sprintf("/home/%s/.linex/lib", os.Getenv("USER"))
@@ -39,16 +40,16 @@ func getFilePath() string {
 	fileName := "commands.json"
 	file := filepath.Join(dir, filepath.Base(fileName))
 
-	_, err := os.Open(file)
+	_, err := os.ReadDir(dir)
 	if err != nil {
 		err := os.MkdirAll(dir, os.ModePerm)
 		if err != nil {
 			log.Fatal("folder creation error >>> ", err)
 		}
-		_, err = os.Create(file)
-		if err != nil {
-			log.Fatal("file creation error >>> ", err)
-		}
+	}
+	_, err = os.OpenFile(file, os.O_RDWR|os.O_CREATE, 0755)
+	if err != nil {
+		log.Fatal("file creation error >>> ", err)
 	}
 
 	return file

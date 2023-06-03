@@ -1,8 +1,5 @@
-snap: push
+snap: remove
 	@snapcraft
-
-push:
-	@git push
 
 build: remove
 	@echo "\nbuilding linex execuable"
