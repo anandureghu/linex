@@ -6,7 +6,6 @@ import (
 	"io/fs"
 	"log"
 	"os"
-	"os/user"
 	"path/filepath"
 	"runtime"
 )
@@ -34,8 +33,7 @@ func getFilePath() string {
 	dir := ""
 	switch runtime.GOOS {
 	case "linux":
-		username, _ := user.Current()
-		dir = fmt.Sprintf("/home/%s/.linex/lib", username.Username)
+		dir = fmt.Sprintf("/home/%s/.linex/lib", os.Getenv("USER"))
 	}
 
 	fileName := "commands.json"
