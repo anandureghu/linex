@@ -42,8 +42,8 @@ func getFilePath() string {
 
 	_, err := os.ReadDir(dir)
 	if err != nil {
-		fmt.Println("Creating folder")
-		err := os.MkdirAll(dir, os.ModePerm)
+		fmt.Println("Creating folder 0700")
+		err := os.MkdirAll(dir, 0700)
 		if err != nil {
 			log.Fatal("folder creation error >>> ", err)
 		}
