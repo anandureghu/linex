@@ -1,4 +1,5 @@
 snap: remove
+	@snapcraft clean linex 
 	@snapcraft
 
 build: remove
