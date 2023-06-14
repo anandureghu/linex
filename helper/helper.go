@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"syscall"
 )
 
 func ReadJSONToken() map[string][]string {
@@ -42,7 +43,7 @@ func getFilePath() string {
 
 	_, err := os.ReadDir(dir)
 	if err != nil {
-		fmt.Println("Creating folder 0700")
+		syscall.Umask(0)
 		err := os.MkdirAll(dir, 0700)
 		if err != nil {
 			log.Fatal("folder creation error >>> ", err)
