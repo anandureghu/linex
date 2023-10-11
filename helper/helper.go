@@ -16,7 +16,7 @@ func ReadJSONToken() map[string][]string {
 	if err != nil {
 		fmt.Println(err)
 	}
-	var result map[string][]string
+	var result = make(map[string][]string)
 	json.Unmarshal([]byte(byteValue), &result)
 
 	return result
